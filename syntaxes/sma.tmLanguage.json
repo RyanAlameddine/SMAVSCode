@@ -1,0 +1,78 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "StanModeArch",
+	"patterns": [
+		{
+			"name": "opCode.logic",
+			"match": "\\b(and|or|xor|not|rSft|lSft)\\b"
+		},
+		{
+			"name": "opCode.math",
+			"match": "\\b(add|sub|mult|div|mod)\\b"
+		},
+		{
+			"name": "opCode.comparison",
+			"match": "\\b(eql|grtr|less|nEql|grtE|lssE)\\b"
+		},
+		{
+			"name": "opCode.flow",
+			"match": "\\b(tp|tpZ|tpNZ)\\b"
+		},
+		{
+			"name": "opCode.memory",
+			"match": "\\b(load|unld|set|mov)\\b"
+		},
+		{
+			"name": "opCode.stack",
+			"match": "\\b(push|pop|peek)\\b"
+		},
+		{
+			"name": "opCode.function",
+			"match": "\\b(call|ret)\\b"
+		},
+		{
+			"name": "constant.register",
+			"match": "\\br[0-9A-F]\\b"
+		},
+		{
+			"name": "constant.number",
+			"begin": "\\b[0-9A-F]",
+			"end":"[0-9A-F]\\b",
+			"patterns": [
+				{
+					"name": "constant.temporary",
+					"match": "_"
+				}
+			]
+		},
+		{
+			"name": "comment.line.double-slash",
+			"begin": "//",
+			"end": "\n",
+			"patterns": [
+				{
+					"name": "comment.line.double-slash.special",
+					"match": "\\b[0-9A-F][0-9A-F]\\b"
+				}
+			]	
+		},
+		{
+			"name": "comment.block",
+			"begin": "\/\\*",
+			"end": "\\*\/"
+		},
+		{
+			"name": "comment.line.number-sign",
+			"begin": "^#(end|)region",
+			"end": "\\n",
+			"patterns": [
+				{
+					"name": "comment.line.title",
+					"begin": "\\b",
+					"end": "$"
+				}
+			]
+		}
+	],
+	"scopeName": "source.sma"
+}

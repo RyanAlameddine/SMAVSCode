@@ -1,0 +1,97 @@
+{
+    "workbench.colorTheme": "Visual Studio Dark",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "opCode.logic",
+                "settings": {
+                    "foreground": "#6e5eca"
+                }
+            },
+            {
+                "scope": "opCode.math",
+                "settings": {
+                    "foreground": "#5d88d8"
+                }
+            },
+            {
+                "scope": "opCode.comparison",
+                "settings": {
+                    "foreground": "#614fc5"
+                }
+            },
+            {
+                "scope": "opCode.flow",
+                "settings": {
+                    "foreground": "#663da8"
+                }
+            },
+            {
+                "scope": "opCode.memory",
+                "settings": {
+                    "foreground": "#8e32a1"
+                }
+            },
+            {
+                "scope": "opCode.stack",
+                "settings": {
+                    "foreground": "#942828"
+                }
+            },
+            {
+                "scope": "opCode.function",
+                "settings": {
+                    "foreground": "#a13280"
+                }
+            },
+            {
+                "scope": "constant.register",
+                "settings": {
+                    "foreground": "#fabe4f"
+                }
+            },
+            {
+                "scope": "constant.number",
+                "settings": {
+                    "foreground": "#ccc7bd"
+                }
+            },
+            {
+                "scope": "constant.temporary",
+                "settings": {
+                    "foreground": "#7c7474"
+                }
+            },
+            {
+                "scope": "comment.line.double-slash",
+                "settings": {
+                    "foreground": "#5cb882"
+                }
+            },
+            {
+                "scope": "comment.line.double-slash.special",
+                "settings": {
+                    "foreground": "#84cea1"
+                }
+            },
+            {
+                "scope": "comment.line.number-sign",
+                "settings": {
+                    "foreground": "#575757"
+                }
+            },
+            {
+                "scope": "comment.block",
+                "settings": {
+                    "foreground": "#3d9742"
+                }
+            },
+            {
+                "scope": "comment.line.title",
+                "settings": {
+                    "foreground": "#b8bdb8"
+                }
+            },
+        ],
+    }
+}

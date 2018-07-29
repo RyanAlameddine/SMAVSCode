@@ -1,0 +1,54 @@
+{
+    "name": "sma",
+    "displayName": "sma",
+    "description": "Stan Mode Architecture",
+    "version": "0.0.1",
+    "publisher": "RA",
+    "engines": {
+        "vscode": "^1.25.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "activationEvents": [
+        "onLanguage:sma"
+    ],
+    "main": "./out/extension",
+    "scripts": {
+        "vscode:prepublish": "npm run compile && npm run lint",
+        "compile": "tsc -p ./",
+        "lint": "tslint -c tslint.json -p tsconfig.json",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "contributes": {
+        "languages": [
+            {
+                "id": "sma",
+                "aliases": [
+                    "StanModeArch",
+                    "sma"
+                ],
+                "extensions": [
+                    ".sma"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "sma",
+                "scopeName": "source.sma",
+                "path": "./syntaxes/sma.tmLanguage.json"
+            }
+        ]
+    },
+    "devDependencies": {
+        "@types/mocha": "^2.2.42",
+        "@types/node": "^7.0.43",
+        "tslint": "^5.10.0",
+        "typescript": "^2.9.2",
+        "vscode": "^1.1.18"
+    }
+}
