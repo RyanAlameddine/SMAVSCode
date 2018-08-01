@@ -435,6 +435,21 @@
             }
         ]
     },
+    "stPr": {
+        "name": "Set in Program space",
+        "description": "This operation sets the register *Destination* to the *Label*'s address relative to Program Space",
+        "category": "Memory",
+        "params": [
+            {
+                "name": "Destination",
+                "type": "Register"
+            },
+            {
+                "name": "Label",
+                "type": "Short"
+            }
+        ]
+    },
     "mov": {
         "name": "Move",
         "description": "This operation copies *Source* to *Destination*",

@@ -20,7 +20,7 @@
 		},
 		{
 			"name": "opCode.memory",
-			"match": "\\b(load|unld|set|mov)\\b"
+			"match": "\\b(load|unld|set|mov|stPr)\\b"
 		},
 		{
 			"name": "opCode.stack",
