@@ -32,6 +32,8 @@ interface OpCode {
 }
 
 class SMAProvider implements vscode.HoverProvider, vscode.CompletionItemProvider {
+    opCodeCompletionItems : vscode.CompletionList = new vscode.CompletionList();
+    
     public static async Create(jsonPath : string): Promise<SMAProvider> {
         const content = await promisifyReadFile(jsonPath);
         const js = JSON.parse(content);
@@ -41,13 +43,16 @@ class SMAProvider implements vscode.HoverProvider, vscode.CompletionItemProvider
 
     private opCodes: { [name: string]: OpCode };
 
-    opCodeCompletionItems : vscode.CompletionList = new vscode.CompletionList();
-
     private constructor(opCodes: { [name: string]: OpCode }) {
         this.opCodes = opCodes;
         for(let key in opCodes){
             this.opCodeCompletionItems.items.push(this.createSnippetItem(key, opCodes[key]));
         }
+
+        let progSpace = new vscode.CompletionItem("progspace", vscode.CompletionItemKind.Snippet);
+        progSpace.insertText = new vscode.SnippetString("$---$\n");
+        progSpace.documentation = new vscode.MarkdownString(`## $---$\n\n *** \n\nMarks the beginning of program space`);
+        this.opCodeCompletionItems.items.push(progSpace);
     }
 
     lineOf(text: string, count: number) : number{
@@ -114,6 +119,7 @@ class SMAProvider implements vscode.HoverProvider, vscode.CompletionItemProvider
     }
 
     provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken, context: vscode.CompletionContext): vscode.ProviderResult<vscode.CompletionItem[] | vscode.CompletionList> {
+
         return this.opCodeCompletionItems;
     }
 

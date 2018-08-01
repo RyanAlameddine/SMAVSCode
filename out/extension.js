@@ -23,6 +23,10 @@ class SMAProvider {
         for (let key in opCodes) {
             this.opCodeCompletionItems.items.push(this.createSnippetItem(key, opCodes[key]));
         }
+        let progSpace = new vscode.CompletionItem("progspace", vscode.CompletionItemKind.Snippet);
+        progSpace.insertText = new vscode.SnippetString("$---$\n");
+        progSpace.documentation = new vscode.MarkdownString(`## $---$\n\n *** \n\nMarks the beginning of program space`);
+        this.opCodeCompletionItems.items.push(progSpace);
     }
     static async Create(jsonPath) {
         const content = await promisifyReadFile(jsonPath);

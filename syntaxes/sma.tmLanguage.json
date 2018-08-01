@@ -72,6 +72,10 @@
 					"end": "$"
 				}
 			]
+		},
+		{
+			"name": "keyword.control",
+			"match": "\\$---\\$"
 		}
 	],
 	"scopeName": "source.sma"
