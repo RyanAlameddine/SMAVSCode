@@ -139,10 +139,13 @@ class SMAProvider implements vscode.HoverProvider, vscode.CompletionItemProvider
             }
         }
         paramString = paramString.slice(0, paramString.length - 1);
-
+        
         counter = 3 - counter;
         for(var i = 0; i < counter; i++){
             paramString += "   ";
+        }
+        if(counter == 3){
+            paramString = paramString.substring(0, paramString.length - 1);
         }
 
         if(label.length == 2) label += "  ";

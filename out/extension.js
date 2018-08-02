@@ -106,6 +106,9 @@ class SMAProvider {
         for (var i = 0; i < counter; i++) {
             paramString += "   ";
         }
+        if (counter == 3) {
+            paramString = paramString.substring(0, paramString.length - 1);
+        }
         if (label.length == 2)
             label += "  ";
         else if (label.length == 3)

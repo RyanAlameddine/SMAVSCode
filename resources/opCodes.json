@@ -481,5 +481,35 @@
         "description": "This operation returns from a function",
         "category": "CallRet",
         "params": []
+    },
+    "ldI": {
+        "name": "Load Indrect",
+        "description": "This operation loads value at address *Source* into *Destination*",
+        "category": "Indirect",
+        "params": [
+            {
+                "name": "Destination",
+                "type": "Register"
+            },
+            {
+                "name": "Source",
+                "type": "Register"
+            }
+        ]
+    },
+    "uldI": {
+        "name": "Unload Indrect",
+        "description": "This operation unloads *Source* into value at address *Destination*",
+        "category": "Indirect",
+        "params": [
+            {
+                "name": "Destination",
+                "type": "Register"
+            },
+            {
+                "name": "Source",
+                "type": "Register"
+            }
+        ]
     }
 }
